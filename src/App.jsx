@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import { Button } from '@mui/material'
+import Hero from './components/custom/Hero'
 
 
 
@@ -11,8 +12,7 @@ function App() {
 
   return (
     <>
-      <h1>Hello World</h1>
-      <Button>Appuie ici</Button>
+      <Hero />
     </>
   )
 }
