@@ -1,3 +1,4 @@
+import { Input } from "@/components/ui/input";
 import React, { useState } from "react";
 import GooglePlacesAutocomplete from "react-google-places-autocomplete";
 
@@ -13,8 +14,7 @@ function CreateTrip() {
         planificateur de voyage vous proposera un itinéraire personnalisé en
         fonction de vos préférences.
       </p>
-
-      <div className="mt-20">
+      <div className="mt-20 flex flex-col gap-10">
         <div>
           <h2 className="text-xl my-3 font-medium">
             Quel est la destination de votre choix ?
@@ -34,6 +34,7 @@ function CreateTrip() {
           <h2 className="text-xl my-3 font-medium">
             Combien de jour dure votre séjour ?
           </h2>
+          <Input placeholder={"Ex.3"} type={"number"} />
         </div>
       </div>
     </div>
