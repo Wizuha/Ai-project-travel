@@ -19,9 +19,15 @@ export const SelectTravelesList = [
     desc: "Un groupe chaleureux",
     icon: "🏡",
     people: "3 à 5 Personnes",
-  }
-
-]
+  },
+  {
+    id: 4,
+    title: "Amis",
+    desc: "Une bande d'amateurs de sensations fortes",
+    icon: "⛵️",
+    people: "5 à 10 Personnes",
+  },
+];
 export const SelectBudgetOptions = [
   {
     id: 1,
