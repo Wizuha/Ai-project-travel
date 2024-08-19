@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/Button";
 import { toast } from "sonner";
 import React, { useEffect, useState } from "react";
 import GooglePlacesAutocomplete from "react-google-places-autocomplete";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import {
   AI_PROMPT,
   SelectBudgetOptions,
@@ -20,11 +21,16 @@ import {
 import { FcGoogle } from "react-icons/fc";
 import { useGoogleLogin } from "@react-oauth/google";
 import axios from "axios";
+import { doc, setDoc } from "firebase/firestore";
+import { db } from "../service/firebaseConfig";
+import { useNavigate } from "react-router-dom";
 
 function CreateTrip() {
   const [place, setPlace] = useState();
   const [formData, setFormData] = useState([]);
   const [openDailog, setOpenDailog] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleInputChange = (name, value) => {
     setFormData({
@@ -77,6 +83,7 @@ function CreateTrip() {
       toast("Veuillez remplir tous les champs");
       return;
     }
+    setLoading(true);
     const FINAL_PROMPT = AI_PROMPT.replace(
       "{location}",
       formData?.location?.label
@@ -85,11 +92,25 @@ function CreateTrip() {
       .replace("{traveler}", formData?.traveler)
       .replace("{budget}", formData?.budget)
       .replace("{totalDays}", formData?.numberDays);
-
-    console.log(FINAL_PROMPT);
-
     const result = await chatSession.sendMessage(FINAL_PROMPT);
-    console.log(result?.response?.text());
+
+    console.log("--", result?.response?.text());
+    setLoading(false);
+    SaveAiTrip(result?.response?.text());
+  };
+
+  const SaveAiTrip = async(TripData) => {
+    setLoading(true);
+    const user = JSON.parse(localStorage.getItem("user"));
+    const docId = Date.now().toString();
+    await setDoc(doc(db, "AITrips", docId), {
+      userSelection: formData,
+      tripData: JSON.parse(TripData),
+      userEmail: user?.email,
+      id: docId,
+    });
+    setLoading(false);
+    navigate('/view-trip/'+ docId)
   };
 
   return (
@@ -169,7 +190,13 @@ function CreateTrip() {
         </div>
       </div>
       <div className="my-10 justify-end flex">
-        <Button onClick={OnGenerateTrip}>Générer un voyage</Button>
+        <Button disabled={loading} onClick={OnGenerateTrip}>
+          {loading ? (
+            <AiOutlineLoading3Quarters className="h-7 w-7 animate-spin" />
+          ) : (
+            'Générer le voyage'
+          )}
+        </Button>
       </div>
 
       <Dialog open={openDailog}>
@@ -184,6 +211,7 @@ function CreateTrip() {
                 Connectez vous à l'application avec l'authentification google
               </p>
               <Button
+                disabled={loading}
                 className="w-full mt-5 flex gap-4 items-center"
                 onClick={login}
               >
