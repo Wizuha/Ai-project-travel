@@ -1,29 +1,29 @@
 export const SelectTravelesList = [
   {
     id: 1,
-    title: "Juste moi",
-    desc: "Un voyage solitaire en exploration",
+    title: "Just me",
+    desc: "A sole traveles in exploration",
     icon: "✈️",
     people: "1",
   },
   {
     id: 2,
-    title: "Un couple",
-    desc: "Deux voyages en tandem",
+    title: "A couple",
+    desc: "Two traveles in tandem",
     icon: "🥂",
     people: "2 Personnes",
   },
   {
     id: 3,
-    title: "Famille",
-    desc: "Un groupe chaleureux",
+    title: "Family",
+    desc: "A group of fun loving adv",
     icon: "🏡",
     people: "3 à 5 Personnes",
   },
   {
     id: 4,
-    title: "Amis",
-    desc: "Une bande d'amateurs de sensations fortes",
+    title: "Friends",
+    desc: "A bunch of thrill-seekes",
     icon: "⛵️",
     people: "5 à 10 Personnes",
   },
@@ -31,22 +31,22 @@ export const SelectTravelesList = [
 export const SelectBudgetOptions = [
   {
     id: 1,
-    title: "Bon marché",
-    desc: "Restez conscient des coûts",
+    title: "Cheap",
+    desc: "Stay conscious of costs",
     icon: "💵",
   },
   {
     id: 2,
-    title: "Modéré",
-    desc: "Maintenir le coût à un niveau moyen",
+    title: "Moderate",
+    desc: "Keep cost on the average side",
     icon: "💰",
   },
   {
     id: 3,
-    title: "Luxe",
-    desc: "Pas d'inquiètude au niveau des coûts",
+    title: "Luxury",
+    desc: "Dont worry about cost",
     icon: "💸",
   }
 ]
 
-export const AI_PROMPT = "Générez un itinéraire pour le lieu : {location}, couvrant {totalDays} jours pour {traveler}, avec un budget de {budget}. Fournissez une liste d'options d'hôtels incluant le nom, le prix,l'adresse ,l'URL de l'image, les coordonnées géographiques, l'évaluation, et une description de chaque hôtel. De plus, incluez des suggestions d'itinéraires journaliers avec le nom des lieux à visiter, les détails des lieux, l'URL de l'image, les coordonnées géographiques, les prix des billets, et le temps de visite de chaque lieu, pour l'ensemble des {totalDays} jours, présenté en format JSON.";
+export const AI_PROMPT = "Generate Travel Plan for Location: {location}, for {totalDays) Days for {traveler) with a {budget} budget, give me Hotels options list with HotelName, HotelAddress, Price, hotel image url, geo coordinates, rating, descriptions and suggest itinerary with placeName, Place Details, Place Image Url, Geo Coordinates, ticket Pricing, Time travel each of the location for {totalDays} days with each day plan with best time to visit in JSON format.";

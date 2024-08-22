@@ -5,16 +5,19 @@ function PlacesToVisit({trip}) {
   return (
     <div>
       <h2 className="font-bold text-lg">Endroits à visiter</h2>
+      
       <div>
-        {trip?.tripData?.itinerary.map((item, index) => (
-          <div key={index}>
-            <h2 className="font-medium text">{item.day}</h2>
-            {item.locations.map((place, index) => (
-              <div>
-                <h2 className='font-medium text-sm text-orange-600'>{place.visitTime}</h2>
+        {trip?.tripData?.itinerary.map((item, index) =>(
+          <div>
+            <h2 className="font-medium text-lg">{item.day}</h2>
+            <div className='grid md:grid-cols-2 gap-5'>
+            {item.plan.map((place, index) => (
+              <div className=''>
+                <h2 className="font-medium text-sm text-orange-600">{place.estimatedTime}</h2>
                 <PlaceCardItem place={place} />
               </div>
             ))}
+            </div>
           </div>
         ))}
       </div>
