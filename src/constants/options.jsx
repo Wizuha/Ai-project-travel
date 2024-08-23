@@ -4,28 +4,28 @@ export const SelectTravelesList = [
     title: "Just me",
     desc: "A sole traveles in exploration",
     icon: "✈️",
-    people: "1",
+    people: "1 people",
   },
   {
     id: 2,
     title: "A couple",
     desc: "Two traveles in tandem",
     icon: "🥂",
-    people: "2 Personnes",
+    people: "2 Peoples",
   },
   {
     id: 3,
     title: "Family",
     desc: "A group of fun loving adv",
     icon: "🏡",
-    people: "3 à 5 Personnes",
+    people: "3 to 5 Peoples",
   },
   {
     id: 4,
     title: "Friends",
     desc: "A bunch of thrill-seekes",
     icon: "⛵️",
-    people: "5 à 10 Personnes",
+    people: "5 to 10 Peoples",
   },
 ];
 export const SelectBudgetOptions = [
