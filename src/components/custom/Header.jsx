@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/Button";
+import { Button } from "../ui/Button";
 import React, { useEffect, useState } from "react";
 import {
   Popover,
