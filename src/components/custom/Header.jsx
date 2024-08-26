@@ -30,7 +30,10 @@ function Header() {
   });
 
   const GetUserProfile = (tokenInfo) => {
-    axios.get(`https://www.googleapis.com/oauth2/v1/userinfo?access_token=${tokenInfo?.access_token}`,{
+    axios
+      .get(
+        `https://www.googleapis.com/oauth2/v1/userinfo?access_token=${tokenInfo?.access_token}`,
+        {
           headers: {
             Authorization: `Bearer ${tokenInfo?.access_token}`,
             Accept: "Application/json",
@@ -41,7 +44,7 @@ function Header() {
         console.log(resp);
         localStorage.setItem("user", JSON.stringify(resp.data));
         setOpenDailog(false);
-        window.location.reload()
+        window.location.reload();
       });
   };
 
@@ -51,9 +54,12 @@ function Header() {
       <div>
         {user ? (
           <div className="flex items-center gap-5">
+            <a href="/create-trip">
+              <Button variant="outline" className="rounded-full">+ Create Trip</Button>
+            </a>
             <a href="/my-trips">
               <Button variant="outline" className="rounded-full">
-                Mes voyages
+                My Trips
               </Button>
             </a>
             <Popover>

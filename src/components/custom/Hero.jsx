@@ -6,13 +6,12 @@ function Hero() {
   return (
     <div className="flex flex-col items-center mx-56 gap-9">
       <h1 className="font-extrabold text-[50px] text-center mt-16">
-        <span className="text-[#F56551]">
-          Découvrez votre prochaine aventure avec l'IA:
-        </span>
-        Des itinéraires personnalisés au bout des doigts
+        <span className="text-[#F56551]">Discover your next AI adventure: </span>
+        Personalised itineraries at your fingertips
       </h1>
       <p className="text-xl text-gray-500 text-center">
-        Votre planificateur de voyage personnel, créant des itinéraires personnalisés adaptés à vos préfèrences et à votre budget.
+        Your personal travel planner, creating customised itineraries to suit
+        your preferences and budget.
       </p>
       <Link to={"/create-trip"}>
         <Button>Get Started, It's Free</Button>

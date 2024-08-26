@@ -116,17 +116,16 @@ function CreateTrip() {
   return (
     <div className="sm:px-10 md:px-32 lg:px-56 xl:px-72 px-5 mt-10">
       <h2 className="font-bold text-3xl">
-        Faites nous part de vos préfèrences de voyages 🏕️🌴
+        Tell us your travel preferences 🏕️🌴
       </h2>
       <p className="mt-3 text-gray-500 text-xl">
-        Il vous suffit de fournir quelques informations de base et notre
-        planificateur de voyage vous proposera un itinéraire personnalisé en
-        fonction de vos préférences.
+        Just provide some basic information, and our trip planner will generate
+        a customized itinerary based on your preferences
       </p>
       <div className="mt-20 flex flex-col gap-10">
         <div>
           <h2 className="text-xl my-3 font-medium">
-            Quel est la destination de votre choix ?
+            What is destination of choice ?
           </h2>
           <GooglePlacesAutocomplete
             apiKey={import.meta.env.VITE_GOOGLE_PLACE_API_KEY}
@@ -141,7 +140,7 @@ function CreateTrip() {
         </div>
         <div>
           <h2 className="text-xl my-3 font-medium">
-            Combien de jour dure votre séjour ?
+            How many days are you planning your trip ?
           </h2>
           <Input
             placeholder={"Ex.3"}
@@ -150,7 +149,7 @@ function CreateTrip() {
           />
         </div>
         <div>
-          <h2 className="text-xl my-3 font-medium">Quel est votre budget ?</h2>
+          <h2 className="text-xl my-3 font-medium">What is your Budget ?</h2>
           <div className="grid grid-cols-3 gap-5 mt-5">
             {SelectBudgetOptions.map((item, index) => (
               <div
@@ -169,7 +168,7 @@ function CreateTrip() {
         </div>
         <div>
           <h2 className="text-xl my-3 font-medium">
-            Combien de personne vont voyager ?
+            How many people will travel ?
           </h2>
           <div className="grid grid-cols-3 gap-5 mt-5">
             {SelectTravelesList.map((item, index) => (
@@ -194,7 +193,7 @@ function CreateTrip() {
           {loading ? (
             <AiOutlineLoading3Quarters className="h-7 w-7 animate-spin" />
           ) : (
-            'Générer le voyage'
+            "Generate Trip"
           )}
         </Button>
       </div>
@@ -204,19 +203,15 @@ function CreateTrip() {
           <DialogHeader>
             <DialogDescription>
               <img src="/logo.svg" />
-              <h2 className="font-bold text-lg mt-7">
-                Connectez vous avec Google
-              </h2>
-              <p>
-                Connectez vous à l'application avec l'authentification google
-              </p>
+              <h2 className="font-bold text-lg mt-7">Connect with google</h2>
+              <p>Log In to the application using google authentication</p>
               <Button
                 disabled={loading}
                 className="w-full mt-5 flex gap-4 items-center"
                 onClick={login}
               >
                 <FcGoogle className="h-7 w-7" />
-                Connectez vous avec Google
+                Connect with google
               </Button>
             </DialogDescription>
           </DialogHeader>
