@@ -2,7 +2,6 @@ import { collection, getDocs, query, where } from 'firebase/firestore'
 import React, { useEffect, useState } from 'react'
 import { db } from '../service/firebaseConfig';
 import { useNavigation } from 'react-router-dom';
-import { private_excludeVariablesFromRoot } from '@mui/material';
 import UserTripCardItem from './components/userTripCardItem';
 
 function MyTrips() {
