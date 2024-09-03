@@ -16,6 +16,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import axios from "axios";
+import Navbar from "./navbar";
 function Header() {
   const user = JSON.parse(localStorage.getItem("user"));
   const [openDailog, setOpenDailog] = useState(false);
@@ -56,16 +57,19 @@ function Header() {
       <div>
         {user ? (
           <div className="flex items-center gap-5">
-            <a href="/create-trip">
-              <Button variant="outline" className="rounded-full">
-                + Create Trip
-              </Button>
-            </a>
-            <a href="/my-trips">
-              <Button variant="outline" className="rounded-full">
-                My Trips
-              </Button>
-            </a>
+            <div className="hidden md:flex items-center gap-5">
+              <a href="/create-trip">
+                <Button variant="outline" className="rounded-full">
+                  + Create Trip
+                </Button>
+              </a>
+              <a href="/my-trips">
+                <Button variant="outline" className="rounded-full">
+                  My Trips
+                </Button>
+              </a>
+            </div>
+            <Navbar />
             <Popover>
               <PopoverTrigger>
                 <img
