@@ -17,6 +17,7 @@ import {
 } from "@/components/ui/dialog";
 import axios from "axios";
 import Navbar from "./navbar";
+import { ModeToggle } from "../ui/mode-toggle";
 function Header() {
   const user = JSON.parse(localStorage.getItem("user"));
   const [openDailog, setOpenDailog] = useState(false);
@@ -58,6 +59,7 @@ function Header() {
         {user ? (
           <div className="flex items-center gap-5">
             <div className="hidden md:flex items-center gap-5">
+              <ModeToggle className ="rounded-full"/>
               <a href="/create-trip">
                 <Button variant="outline" className="rounded-full">
                   + Create Trip

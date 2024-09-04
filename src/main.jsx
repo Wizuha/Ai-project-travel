@@ -9,6 +9,7 @@ import { Toaster } from "./components/ui/sonner";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import ViewTrip from "./view-trip/[tripId]/index.jsx";
 import MyTrips from "./my-trips/index.jsx";
+import { ThemeProvider } from "./components/ui/ThemeProvider.jsx";
 
 const router = createBrowserRouter([
   {
@@ -31,10 +32,12 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
+    <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
     <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_AUTH_CLIENT_ID}>
       <Header />
       <Toaster />
       <RouterProvider router={router} />
     </GoogleOAuthProvider>
+    </ThemeProvider>
   </React.StrictMode>
 );

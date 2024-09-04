@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Link } from "react-router-dom";
 import { Button } from "../ui/Button";
+import { ModeToggle } from "../ui/mode-toggle";
 
 function Navbar() {
   return (
@@ -33,6 +34,9 @@ function Navbar() {
                     My Trips
                   </Button>
                 </a>
+              </NavigationMenuLink>
+              <NavigationMenuLink className="flex justify-center w-full" >
+                < ModeToggle />
               </NavigationMenuLink>
             </NavigationMenuContent>
           </NavigationMenuItem>
