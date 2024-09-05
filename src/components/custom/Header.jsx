@@ -59,7 +59,7 @@ function Header() {
         {user ? (
           <div className="flex items-center gap-5">
             <div className="hidden md:flex items-center gap-5">
-              <ModeToggle className ="rounded-full"/>
+                <ModeToggle />
               <a href="/create-trip">
                 <Button variant="outline" className="rounded-full">
                   + Create Trip
