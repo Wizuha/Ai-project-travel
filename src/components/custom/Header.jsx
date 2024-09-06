@@ -59,7 +59,7 @@ function Header() {
         {user ? (
           <div className="flex items-center gap-5">
             <div className="hidden md:flex items-center gap-5">
-                <ModeToggle />
+              <ModeToggle />
               <a href="/create-trip">
                 <Button variant="outline" className="rounded-full">
                   + Create Trip
@@ -98,7 +98,7 @@ function Header() {
         )}
       </div>
       <Dialog open={openDailog}>
-        <DialogContent>
+        <DialogContent setOpenDailog={setOpenDailog}>
           <DialogHeader>
             <DialogDescription>
               <img src="/logo.svg" />

@@ -199,7 +199,7 @@ function CreateTrip() {
       </div>
 
       <Dialog open={openDailog}>
-        <DialogContent>
+        <DialogContent setOpenDailog={setOpenDailog}>
           <DialogHeader>
             <DialogDescription>
               <img src="/logo.svg" />
